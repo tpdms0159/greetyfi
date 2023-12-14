@@ -12,6 +12,7 @@
     "dom-to-image-more": "^3.2.0",
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
+    "http-proxy-middleware": "^2.0.6",
     "immer": "^10.0.3",
     "lottie-react": "^2.4.0",
     "react": "^18.0.0",
@@ -59,4 +60,5 @@
       "last 1 safari version"
     ]
   }
+
 }

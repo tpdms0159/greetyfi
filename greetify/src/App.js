@@ -14,11 +14,16 @@ import Word from './Pages/main/Word';
 import Speech from './Pages/main/Speech';
 import CheckCard from './Pages/CheckCard';
 import ScrollTop from './Pages/components/ScrollTop';
+import Loading from './Pages/Loading';
+import { useEffect } from 'react';
+import axios from 'axios';
+import KakaoShare from './test';
 
 
 
 
 function App() {
+
   return (
 
 
@@ -43,8 +48,11 @@ function App() {
       <Route path='/main/Word' element={<Word/>} />
       <Route path='/main/Speech' element={<Speech/>} />
 
-
+      <Route path='/loading' element={<Loading/>} />
       <Route path='/checkcard' element={<CheckCard/>} />
+
+
+      <Route path='/test' element={<KakaoShare/>} />
 
 
      

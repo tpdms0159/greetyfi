@@ -19,11 +19,6 @@ export default function CheckCard() {
   font-size: 20px;
 `
 
-  useEffect(() => {
-    Kakao.cleanup();
-    Kakao.init('dfef866b8e3f9495330216a668763521');
-    console.log(Kakao.isInitialized());
-  })
   return (
     <div style={{
       color: 'white',
@@ -56,28 +51,7 @@ export default function CheckCard() {
           </Link>
         
 
-        <div style={{display: 'flex', flexDirection: 'row'}} onClick={() => {
-          Kakao.Share.sendDefault({
-            objectType: 'feed',
-            content: {
-                title: '오늘의 디저트',
-                description: '아메리카노, 빵, 케익',
-                imageUrl:
-                'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
-                link: {
-                    mobileWebUrl: realUrl,
-                },
-            },
-            buttons: [
-                {
-                    title: '나도 테스트 하러가기',
-                    link: {
-                    mobileWebUrl: realUrl,
-                    },
-                },
-                ],
-            });
-        }}>
+        <div style={{display: 'flex', flexDirection: 'row'}} onClick={() => {}}>
           <img src="assets/icons/icon_kakao.png" style={{
             width: '6vw',
             height: '3vh',

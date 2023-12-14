@@ -147,7 +147,7 @@ export default function Speech() {
       <Btn onClick={() => {
         dispatch(dialect(isSelected));
       }}>
-        <Link to='/checkcard' style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
+        <Link to='/loading' style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
       </Btn>
       </div>
             
