@@ -1,0 +1,73 @@
+
+
+/* #app { width: 100% } */
+/* html,
+body {
+  position: relative;
+  height: 100%;
+} */
+
+/* body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+} */
+
+/* #app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.swiper {
+  width: 240px;
+  height: 320px;
+  padding: 10%;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper-slide:nth-child(1n) {
+  background-color: rgb(0, 0, 0);
+}
+.swiper-pagination-bullet { 
+  width: 8px;
+  height: 8px;
+  background: transparent; 
+  border: 1px solid pink; 
+  opacity: 1; 
+}
+
+.swiper-pagination-bullet-active {
+  width: 27px;
+  transition: width 0.5s;
+  border-radius: 5px; 
+  background: pink; 
+  border: 1px solid transparent; 
+}

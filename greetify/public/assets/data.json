@@ -1,0 +1,164 @@
+{
+    "season": [
+        {
+            "id" : 1,
+            "word": "크리스마스",
+            "eng": "CHRISMAS",
+            "isSelected": "false"
+        },
+        {
+            "id" : 2,
+            "word": "연말",
+            "eng": "YEAREND",
+            "isSelected": "false"
+        }
+        ,
+        {
+            "id" : 3,
+            "word": "신년",
+            "eng": "NEWYEAR",
+            "isSelected": "false"
+        },
+        {
+            "id" : 4,
+            "word": "생일",
+            "eng": "BIRTHDAY",
+            "isSelected": "false"
+        }
+    ],
+
+    "emotion": [
+        {
+            "id": 1,
+            "word": "인사",
+            "eng": "GREETING",
+            "isSelected": "false"
+        },
+        {
+            "id": 2,
+            "word": "사랑",
+            "eng": "LOVE",
+            "isSelected": "false"
+        },
+        {
+            "id": 3,
+            "word": "인생",
+            "eng": "LIFE",
+            "isSelected": "false"
+        },
+        {
+            "id": 4,
+            "word": "공부",
+            "eng": "STUDY",
+            "isSelected": "false"
+        },
+        {
+            "id": 5,
+            "word": "성공",
+            "eng": "SUCCESS",
+            "isSelected": "false"
+        },
+        {
+            "id": 6,
+            "word": "친구",
+            "eng": "FRIEND",
+            "isSelected": "false"
+        },
+        {
+            "id": 7,
+            "word": "이별",
+            "eng": "BREAKUP",
+            "isSelected": "false"
+        },
+        {
+            "id": 8,
+            "word": "노력",
+            "eng": "EFFORT",
+            "isSelected": "false"
+        },
+        {
+            "id": 9,
+            "word": "희망",
+            "eng": "HOPE",
+            "isSelected": "false"
+        },
+        {
+            "id": 10,
+            "word": "도전",
+            "eng": "CHALLENGE",
+            "isSelected": "false"
+        }
+    ],
+
+    "age":[
+        {
+            "id": 1,
+            "word": "10대",
+            "eng": "TEENAGER",
+            "isSelected": "false"
+        },
+        {
+            "id": 2,
+            "word": "20대",
+            "eng": "TWENTIES",
+            "isSelected": "false"
+        },
+        {
+            "id": 3,
+            "word": "30대",
+            "eng": "THIRTIES",
+            "isSelected": "false"
+        },
+        {
+            "id": 4,
+            "word": "40대",
+            "eng": "FORTIES",
+            "isSelected": "false"
+        }
+    ],
+    
+    "speech": [
+        {
+            "id": 1,
+            "word": "경상도 사투리",
+            "eng" : "GYEONGSANG",
+            "isSelected": "false"
+        },
+        {
+            "id": 2,
+            "word": "전라도 사투리",
+            "eng": "JEOLLA",
+            "isSelected": "false"
+        },
+        {
+            "id": 3,
+            "word": "제주도 사투리",
+            "eng": "JEJU",
+            "isSelected": "false"
+        },
+        {
+            "id": 4,
+            "word": "충청도 사투리",
+            "eng": "CHUNGCHEONG",
+            "isSelected": "false"
+        },
+        {
+            "id": 5,
+            "word": "소설 말투",
+            "eng": "NOVEL",
+            "isSelected": "false"
+        },
+        {
+            "id": 6,
+            "word": "앵커 말투",
+            "eng": "ANCHOR",
+            "isSelected": "false"
+        },
+        {
+            "id": 7,
+            "word": "사극 말투",
+            "eng": "HISTORY",
+            "isSelected": "false"
+        }
+    ]
+}
