@@ -8,6 +8,7 @@ import Stepbar from '../components/StepBar';
 import Title from '../components/Title';
 import { useDispatch, useSelector } from 'react-redux';
 import { cardDesign } from '../../reducer';
+import Btn from '../components/Btn';
 
 
 export default function CardDesign() {
@@ -22,24 +23,24 @@ export default function CardDesign() {
   align-items: center;
   maring-bottom: 10%;
 `
-const Btn = styled.button`
-  width: 100%;
-  height: 6vh;
-  border-color: #FF67A4;
-  border-radius: 10px;
+// const Btn = styled.button`
+//   width: 100%;
+//   height: 6vh;
+//   border-color: #FF67A4;
+//   border-radius: 10px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2%;
-  background-color: #131212;
-  font-size: 20px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 2%;
+//   background-color: #131212;
+//   font-size: 20px;
 
-  margin:5vh 3vw;
-`
+//   margin:5vh 3vw;
+// `
 const dispatch = useDispatch();
 const checks = useSelector((state) => {
-  return state.select.value;
+  return state.select.value.season;
 })
 console.log('design checks:', checks)
 
@@ -62,10 +63,15 @@ const getInd = (ind) => {
         sub2="글귀가 배치되어 받아 보실 수 있으세요"
         />
 
-      <Slider getindex={getInd} style={{heigth: '50vh'}}/>
+      <Slider getindex={getInd} style={{heigth: '50vh', margin: '10% 0'}} 
+      imgURL1={`/assets/card/MAX/${checks}1.png`} imgURL2={`/assets/card/MAX/${checks}2.png`}
+      />
 
-      <div style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
-      <Btn onClick={() => {console.log(index)}}>
+      <div style={{display: 'flex', flexDirection: 'row', width: '90%', }}>
+        <Btn text="이전" link='/main/season' onClick={() => {console.log("onclick")}} length="40%"/>
+        <Btn text="이전" link='/main/emotion' onClick={() => {console.log("onclick")}} length="40%"/>
+        
+      {/* <Btn onClick={() => {console.log(index)}}>
         <Link to='/main/season' style={{width: '100%', textDecoration: 'none', color: 'white'}}>이전</Link>
       </Btn>
 
@@ -75,7 +81,7 @@ const getInd = (ind) => {
         
       }}>
         <Link to='/main/emotion' style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
-      </Btn>
+      </Btn> */}
       </div>
 
       </BoardingView>

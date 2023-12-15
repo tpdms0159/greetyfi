@@ -7,22 +7,11 @@ import { season } from '../../reducer';
 import { useDispatch, useSelector } from 'react-redux';
 import { cardDesign } from '../../reducer';
 import axios from 'axios'
+import Btn from '../components/Btn'
+import Swal from 'sweetalert2'
 
 
-const Btn = styled.button`
-  width: 90%;
-  border-color: #FF67A4;
-  border-radius: 10px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2%;
-  background-color: #131212;
-  font-size: 20px;
-
-  margin: 10%;
-`
 
 const BoardingView = styled.div`
   
@@ -151,18 +140,23 @@ export default function Home() {
               </>);
             })}
         </div>
+        
+        <Btn text="다음" link={isSelected.length == 0 ? "": '/main/design'} length="90%" func={() => {
+                console.log('onClick');
+                if (isSelected !== ""){
+                  dispatch(season(isSelected));
+                  }
+                else{ 
+                  Swal.fire({
+                    title: '오류',
+                    html: `
+                    옵션을 선택해주세요 !!`,
+                    imageUrl: '/assets/alert/fail.png',
+                    width: '80%',
+                  })}
+                }}/>
 
 
-        <Btn onClick={() => {
-          
-          if (isSelected !== ""){
-          dispatch(season(isSelected));
-          }
-          else{ alert("옵션을 선택하라")}
-          }}>
-          <Link to={isSelected.length === 0 ? null :'/main/design'} style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
-        </Btn>
-            
         
     </BoardingView>
   )

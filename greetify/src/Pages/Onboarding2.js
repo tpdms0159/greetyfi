@@ -6,19 +6,8 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import StepBar from './components/StepBar'
 import Title from './components/Title'
+import Btn from './components/Btn'
 
-const Btn = styled.button`
-  width: 90%;
-  border-color: #FF67A4;
-  border-radius: 10px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2%;
-  background-color: #131212;
-  font-size: 20px;
-`
 
 const BoardingView = styled.div`
   width: 100%;
@@ -48,9 +37,7 @@ export default function Onboarding() {
 
         <Lottie animationData={motion} loop={true} style={{minWidth: '100vw'}}/>
 
-        <Btn >
-            <Link to='/onboarding3' style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
-        </Btn>
+        <Btn text="다음" link='/onboarding3' length='90%'/>
     </BoardingView>
   )
 }
