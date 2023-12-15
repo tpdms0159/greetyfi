@@ -79,7 +79,12 @@ function Word() {
       </Btn>
 
       <Btn onClick={() => {
-        dispatch(word(words));
+        console.log(words.length);
+        if (words.length !== 0)
+        {dispatch(word(words));}
+        else {
+          alert("단어를 작성해주세요");
+        }
       }}>
         <Link to='/main/speech' style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
       </Btn>

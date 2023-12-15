@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 function Input(props) {
-    const [word11, setWord1] = useState("");
-    const [word12, setWord2] = useState("");
+    const [world1, setWord1] = useState("");
+    const [world2, setWord2] = useState("");
 
     let words = [];
 
@@ -24,7 +24,7 @@ function Input(props) {
       margin:5vh 3vw;
     `
   const sendWords = () => {
-    words = [...words, word11, word12];
+    words = [...words, world1, world2];
     props.getwords(words);
   
   }

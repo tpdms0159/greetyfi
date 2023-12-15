@@ -3,20 +3,20 @@
         {
             "id" : 1,
             "word": "크리스마스",
-            "eng": "CHRISMAS",
+            "eng": "CHRISTMAS",
             "isSelected": "false"
         },
         {
             "id" : 2,
             "word": "연말",
-            "eng": "YEAREND",
+            "eng": "YEAR_END",
             "isSelected": "false"
         }
         ,
         {
             "id" : 3,
             "word": "신년",
-            "eng": "NEWYEAR",
+            "eng": "NEW_YEAR",
             "isSelected": "false"
         },
         {
@@ -151,13 +151,13 @@
         {
             "id": 6,
             "word": "앵커 말투",
-            "eng": "ANCHOR",
+            "eng": "CELEBRITY",
             "isSelected": "false"
         },
         {
             "id": 7,
             "word": "사극 말투",
-            "eng": "HISTORY",
+            "eng": "HISTORICAL",
             "isSelected": "false"
         }
     ]

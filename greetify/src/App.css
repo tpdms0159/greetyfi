@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -35,4 +36,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: Yclover;
+  src: url('/public/assets/fonts/YClover-Bold.otf');
+}
+
+@font-face {
+  font-family: pretendMedium;
+  src: url('/public/assets/fonts/Pretendard-Medium.otf');
 }

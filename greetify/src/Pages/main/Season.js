@@ -73,7 +73,13 @@ export default function Home() {
   
   const onClick = (eng) => {
     console.log('eng:', eng);
+    if (eng == undefined){
+      alert("메뉴를 선택해주세요!");
+    }
+    else{
+    console.log('eng:', eng);
     setIsSelected(eng);
+    }
     // 변경된 값을 전송하도록 해야한다 - reducer
   }
   return (
@@ -148,10 +154,13 @@ export default function Home() {
 
 
         <Btn onClick={() => {
-          console.log('season selected: ', isSelected);
+          
+          if (isSelected !== ""){
           dispatch(season(isSelected));
+          }
+          else{ alert("옵션을 선택하라")}
           }}>
-          <Link to='/main/design' style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
+          <Link to={isSelected.length === 0 ? null :'/main/design'} style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
         </Btn>
             
         

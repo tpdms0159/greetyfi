@@ -5,16 +5,14 @@ const initialStateValue = {
     cardDesignId: 0,
     season: 'None',
     emotional: [],
-    age: 'None',
+    age: [],
     dialect: 'None',
     word: []
-
-    
 };
 
 const dataBox = createSlice({
     name: 'selects',
-    initialState: {value: initialStateValue},
+    initialState: {value: initialStateValue, ments: ""},
     reducers: {
         season: (state, action) => {
             state.value.season =  action.payload ;
@@ -33,12 +31,15 @@ const dataBox = createSlice({
         },
         dialect: (state, action) => {
             state.value.dialect = action.payload;
+        },
+        ments: (state, action) => {
+            state.ments = action.payload;
         }
 
 
     }
 });
 
-export const {season, cardDesign, emotion, age, word, dialect} = dataBox.actions;
+export const {season, cardDesign, emotion, age, word, dialect, ments} = dataBox.actions;
 
 export default dataBox;

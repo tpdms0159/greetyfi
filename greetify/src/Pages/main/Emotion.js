@@ -167,9 +167,15 @@ console.log('emotion checks:', checks);
       </Btn>
 
       <Btn onClick={() => {
-        dispatch(emotion(isSelected))
+        console.log(isSelected.length);
+        if (isSelected.length !== 0) {
+          dispatch(emotion(isSelected))
+        }
+        else {
+          alert("옵션을 골라주세요")
+        }
         }}>
-        <Link to='/main/age' style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
+        <Link to={isSelected.length == 0 ? '/main/emotion':'/main/age'} style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
       </Btn>
       </div>
             

@@ -20,9 +20,9 @@ function Slider(props) {
  spaceBetween={10}
  onSlideChange={sendInd}
  
+
 >
-    <SwiperSlide>
-      <img src='/assets/card/생일카드_1.png' style={{width: '100%', borderRadius: '20px'}} /></SwiperSlide>
+    <SwiperSlide><img src='/assets/card/생일카드_1.png'  style={{width: '100%', borderRadius: '20px'}}/></SwiperSlide>
     <SwiperSlide><img  src='/assets/card/생일카드_2.png' style={{width: '100%', borderRadius: '20px'}}/></SwiperSlide>
     <SwiperSlide><img  src='/assets/card/생일카드_1.png' style={{width: '100%', borderRadius: '20px'}}/></SwiperSlide>
     <SwiperSlide><img  src='/assets/card/생일카드_1.png' style={{width: '100%', borderRadius: '20px'}}/></SwiperSlide>

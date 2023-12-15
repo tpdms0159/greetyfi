@@ -67,8 +67,18 @@ export default function Age() {
 
   
   const onClick = (id) => {
-    console.log('id:', id);
-    setIsSelected(id);
+    console.log('id', id);
+    if(isSelected.includes(id)) {
+      setIsSelected(isSelected.filter(isSelected => isSelected !== id));
+    }
+    else if (isSelected.length == 2) {
+      
+      alert('최대 2개만 선택가능합니당')
+    }
+    else {
+      setIsSelected([...isSelected, id]);
+    }
+
     // 변경된 값을 전송하도록 해야한다 - reducer
   }
   return (
@@ -91,7 +101,7 @@ export default function Age() {
               { (ind % 3) === 2 ? 
                 <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'flex-start'}}>
                 {word.map(data => {
-                  const select = isSelected === data.eng;
+                  const select = isSelected.includes(data.eng);
                   
 
                   return(
@@ -114,8 +124,9 @@ export default function Age() {
               <div style={{ display: 'flex', justifyContent:'flex-start'}}>
               {word.map(data => {
                 
-                console.log('isSelected:', data.isSelected)
-                const select = isSelected === data.eng;
+                
+                const select = isSelected.includes(data.eng);
+                console.log('isSelected:', data.isSelected);
 
                 return(
                   <div style={{textAlign: 'center'}}> 
@@ -144,8 +155,15 @@ export default function Age() {
         <Link to='/main/emotion' style={{width: '100%', textDecoration: 'none', color: 'white'}}>이전</Link>
       </Btn>
 
-      <Btn onClick={() => {dispatch(age(isSelected))}}>
-        <Link to='/main/word' style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
+      <Btn onClick={() => {
+        if (isSelected.length !== 0) {
+        dispatch(age(isSelected));
+        }
+        else{
+          alert("옵션을 골라주세요");
+        }
+        }}>
+        <Link to={isSelected.length == 0 ? '':'/main/word'} style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
       </Btn>
       </div>
             

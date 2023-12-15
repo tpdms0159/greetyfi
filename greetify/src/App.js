@@ -18,6 +18,8 @@ import Loading from './Pages/Loading';
 import { useEffect } from 'react';
 import axios from 'axios';
 import KakaoShare from './test';
+import Dom from './TestImage';
+import ExampleCaptureOnMountManually from './testDownload';
 
 
 
@@ -53,6 +55,9 @@ function App() {
 
 
       <Route path='/test' element={<KakaoShare/>} />
+
+      <Route path='/testimg' element={<Dom/>} />
+      {/* <Route path='/testdownload' element={<ExampleCaptureOnMountManually/>} /> */}
 
 
      

@@ -57,11 +57,11 @@ export default function Home() {
           style={{width: '80vw', height: '60vh'}}
    
          >
-            <SwiperSlide ><img src = 'assets/card/생일카드_1.png' alt='ALT'/></SwiperSlide>
-            <SwiperSlide ><img src = 'assets/card/생일카드_2.png' alt='ALT'/></SwiperSlide>
-            <SwiperSlide ><img src = 'assets/card/연말_1.png' alt='ALT'/></SwiperSlide>
-            <SwiperSlide ><img src = 'assets/card/크리스마스_1.png' alt='ALT'/></SwiperSlide>
-            <SwiperSlide ><img src = 'assets/card/크리스마스_2.png' alt='ALT'/></SwiperSlide>
+            <SwiperSlide ><img src = 'assets/card/생일카드_1.png' alt='ALT'style={{width: '80vw', borderRadius: '20px'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'assets/card/생일카드_2.png' alt='ALT' style={{width: '80vw', borderRadius: '20px'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'assets/card/연말_1.png' alt='ALT' style={{width: '80vw', borderRadius: '20px'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'assets/card/크리스마스_1.png' alt='ALT'style={{width: '80vw', borderRadius: '20px'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'assets/card/크리스마스_2.png' alt='ALT'style={{width: '80vw', borderRadius: '20px'}}/></SwiperSlide>
          </Swiper>
 
          </div>
@@ -71,7 +71,11 @@ export default function Home() {
             <Link to='/main/season' style={{width: '100%', textDecoration: 'none', color: 'white'}}>나만의 카드 만들기</Link>
         </Btn>
         
-        <p onClick={() => {
+        <p style={{
+          display: 'flex',
+          justifyContent: 'center'
+        }}
+        onClick={() => {
           Swal.fire({
             title: 'URL 복사 완료',
             html: `
@@ -86,8 +90,8 @@ export default function Home() {
           }
           )}   
     }>
-      그립하이 친구에게 공유하기  &nbsp;
-            <img src='/icon_link intact.png' alt ='alt' />
+      그립하이 친구에게 공유하기  &nbsp;&nbsp;
+            <img src='assets/icons/icon_link intact.png' alt ='alt' />
         </p>
     </BoardingView>
   )

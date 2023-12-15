@@ -70,7 +70,9 @@ const getInd = (ind) => {
       </Btn>
 
       <Btn onClick={() => {
-        dispatch(cardDesign(index))
+       
+          dispatch(cardDesign(index+ 1));
+        
       }}>
         <Link to='/main/emotion' style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
       </Btn>
