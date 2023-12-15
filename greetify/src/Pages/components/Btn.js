@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export default function Btn(props) {
-    console.log(props);
+    console.log(props.link);
     
   return (
     <div style={{
@@ -12,26 +12,28 @@ export default function Btn(props) {
         flexDirection: 'column',
         flex : 1,
         justifyContent: 'center',
-        // alignContent: 'center',
+        alignContent: 'center',
     }} onClick={props.onClick !== null ? props.func: () => {}}>
+        
         <Link to={`${props.link}`}>
             <p style={{
+                width: '100%',
                 position: 'absolute',
                 zIndex: 2,
                 width: `${props.length}`,
                 textAlign:'center',
                 textDecoration: 'none',
                 color : 'white',
-                fontSize: '1.35rem',
-                verticalAlign: 'center',
+                fontSize: '24px',
+                // verticalAlign: 'center',
             }}>{props.text}</p>
-            
-        <img src='/assets/btnBox2.png' style={{
+
+        <img src={`/assets/btnBox${props.size}.png`} style={{
             position: 'absolute',
             zIndex: 1,
-            maxWidth: '40%',
-            width: '50%'
         }} />
+            
+        
         </Link>
     </div>
 

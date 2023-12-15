@@ -5,6 +5,8 @@ import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
 import KakaoShare from '../test';
 import html2canvas from 'html2canvas';
+import { useSelector } from 'react-redux';
+import DownImage from '../test';
 
 const {Kakao} = window;
 
@@ -80,8 +82,16 @@ const [href, setHref] = useState("");
   }
     const today = new Date();
     const [myDate, setMydate] = useState("");
+    const datas = useSelector((state) => {return state.select})
+    console.log(datas);    
     useEffect(() =>
-    {if (parseInt(today.getDate()) < 10){
+    {
+      
+      
+      
+      
+      
+      if (parseInt(today.getDate()) < 10){
         if ( today.getMonth() + 1 < 10){
         setMydate(`${today.getFullYear()}.0${today.getMonth() + 1}.0${today.getDate()}`);
         }
@@ -111,71 +121,92 @@ const [href, setHref] = useState("");
 
 
       <div id='downloadImg' style={{
-            
-            width: '90vw',
-            height: '90vw * 1.6px',
+            width: '387px',
+            height: '640px',
             padding: '5vw'
             }}>
               
                 <h1 style={{
                     position: 'absolute',
                     zIndex: 2,
-                    top: '3vh',
-                    left: '8.7vw',
+                    top: '14.4%',
+                    left: '9%',
                     fontSize: '12px',
-                    color: 'black'
+                    color: 'white'
                 }}>{myDate}</h1>
                 <p style={{
+                    maxWidth:'70%', 
                     position: 'absolute',
                     zIndex: 2,
-                    right: '30vw',
-                    top: '30vh',
-                    color:'black',
+                    right: '12%',
+                    top: '60%',
+                    color:'white',
                     textAlign: 'center'
-                }}> 진짜 텍스트들 들어올거임
-                    <br/>
-                    엄청 많이 들어온댕
-                    <br/>
-                    새해가 밝았어요 모두 반가워용
-                    <br/>
-                    안녕안녕 친구등
+                }}> {datas.ments}
                 </p>
             
-            <img src='/assets/card/생일카드_1 copy.png' style={{
-                // width: '90vw',
+            <img src={`/assets/card/DEFAULT/${datas.value.season}${datas.value.cardDesignId}.png`} style={{
+                width: '90%',
                 borderRadius: '16px',
-                // height: '90vw * 1.6px'
-                margin: '2vh 3vw 2vh 0vw'
+                
+                margin: '2vh 3vw 2vh 0vw',
+                position: 'absolute',
+                zIndex: 1,
             }}/>
         </div>
 
       
   
-      <div style={{display: 'flex', flexDirection: 'row'}} id='card'>
+      <div style={
+        {display: 'flex', 
+        flexDirection: 'row', 
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '80%'}} id='card'>
 
         <Link to="/main/word">
           <div style={{display: 'flex', flexDirection: 'row'}}>
             <img src="assets/icons/icon_T.png" style={{
               width: '6vw',
               height: '3vh',
-              margin: '2vw'
+              margin: '2vw',
+              color: 'white',
+              
             }}/>
-            <p>문구 바꾸기</p>
+            <p style={{
+              textDecoration: 'none', 
+              color: 'white'}}>문구 바꾸기</p>
           </div>
           </Link>
         
 
-        <div style={{display: 'flex', flexDirection: 'row'}} onClick={() => {}}>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems:'center',
+          margin: '0 10%'
+        }} 
+        onClick={() =>{
+          
+          console.log('click');
+         
+            // return (<DownImage/> );
+        }
+          }>
           <img src="assets/icons/icon_kakao.png" style={{
             width: '6vw',
             height: '3vh',
             margin: '2vw'
           }}/>
-          <p>카카오톡 발송</p>
+          {/* <p >서비스 공유</p> */}
+          <KakaoShare link={href === "" ? "/assets/card/생일카드_1.png": href} style={{
+            
+          }}/>
         </div>
       </div>
 
-      <KakaoShare link={href === "" ? "/assets/card/생일카드_1.png": href}/>
+      
 
 
 

@@ -34,7 +34,7 @@ export default function Onboarding() {
         />
         
         <Lottie animationData={motion} loop={false} style={{width: '100vw'}}/>
-        <Btn text="다음" link="/home" length="90%" />
+        <Btn text="다음" link="/home" length="90%" size='1'/>
 
     </BoardingView>
   )

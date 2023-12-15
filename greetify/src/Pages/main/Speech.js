@@ -5,21 +5,9 @@ import Stepbar from '../components/StepBar'
 import Title from '../components/Title'
 import { useDispatch, useSelector } from 'react-redux'
 import { dialect } from '../../reducer';
+import Btn from '../components/Btn'
+import Swal from 'sweetalert2'
 
-const Btn = styled.button`
-  width: 90%;
-  border-color: #FF67A4;
-  border-radius: 10px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2%;
-  background-color: #131212;
-  font-size: 20px;
-
-  margin: 3%;
-`
 
 const BoardingView = styled.div`
   
@@ -139,8 +127,34 @@ export default function Speech() {
             })}
         </div>
 
-        <div style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
-      <Btn>
+        <div style={{display: 'flex', flexDirection: 'row', width: '90%'}}>
+
+        <Btn text="이전" link='/main/emotion' onClick={() => {
+        console.log('이전');
+        dispatch(dialect(""));
+        
+        console.log("onclick")}} length="42%" size='2'/>
+
+        <Btn text="다음" link={isSelected.length === 0 ? "": '/checkcard'} func={() => {
+          console.log(isSelected.length);
+          if (isSelected.length !== 0) {
+          dispatch(dialect(isSelected))
+        }
+        else {
+          Swal.fire({
+            title: '오류',
+            html: `
+            옵션을 선택해주세요 !!`,
+            imageUrl: '/assets/alert/fail.png',
+            width: '80%',
+          })
+        }
+        }} length="42%" size='2'/>
+
+
+
+
+      {/* <Btn>
         <Link to='/main/word' style={{width: '100%', textDecoration: 'none', color: 'white'}}>이전</Link>
       </Btn>
 
@@ -148,7 +162,7 @@ export default function Speech() {
         dispatch(dialect(isSelected));
       }}>
         <Link to='/loading' style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
-      </Btn>
+      </Btn> */}
       </div>
             
             

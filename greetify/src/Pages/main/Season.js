@@ -154,7 +154,7 @@ export default function Home() {
                     imageUrl: '/assets/alert/fail.png',
                     width: '80%',
                   })}
-                }}/>
+                }} size='1'/>
 
 
         

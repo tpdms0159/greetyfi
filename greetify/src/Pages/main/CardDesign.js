@@ -44,10 +44,11 @@ const checks = useSelector((state) => {
 })
 console.log('design checks:', checks)
 
-const index = useRef(0);
+// const index = useRef(0);
+let index = 0;
 const getInd = (ind) => {
-  console.log(ind);
-  index.current=ind;
+  console.log('ind:',ind);
+  index=ind;
   // dispatch(cardDesign({cardDesign: ind}));
 }
 
@@ -68,8 +69,10 @@ const getInd = (ind) => {
       />
 
       <div style={{display: 'flex', flexDirection: 'row', width: '90%', }}>
-        <Btn text="이전" link='/main/season' onClick={() => {console.log("onclick")}} length="40%"/>
-        <Btn text="이전" link='/main/emotion' onClick={() => {console.log("onclick")}} length="40%"/>
+        <Btn text="이전" link='/main/season' 
+        func={() => {console.log("onclick")}} length="42%" size='2'/>
+        <Btn text="다음" link='/main/emotion' 
+        func={() => {console.log('index:', index); dispatch(cardDesign(index + 1));}} length="42%" size='2'/>
         
       {/* <Btn onClick={() => {console.log(index)}}>
         <Link to='/main/season' style={{width: '100%', textDecoration: 'none', color: 'white'}}>이전</Link>
@@ -77,7 +80,7 @@ const getInd = (ind) => {
 
       <Btn onClick={() => {
        
-          dispatch(cardDesign(index+ 1));
+          
         
       }}>
         <Link to='/main/emotion' style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>

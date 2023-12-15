@@ -18,7 +18,8 @@ const dataBox = createSlice({
             state.value.season =  action.payload ;
         },
         cardDesign: (state, action) => {
-            state.value.cardDesignId = action.payload.current;
+            console.log(action.payload);
+            state.value.cardDesignId = action.payload;
         },
         emotion: (state, action) => {
             state.value.emotional =  action.payload;
@@ -27,7 +28,7 @@ const dataBox = createSlice({
             state.value.age = action.payload;
         },
         word: (state, action) => {
-            state.value.word = action.payload;
+            state.value.word = action.payload.current;
         },
         dialect: (state, action) => {
             state.value.dialect = action.payload;

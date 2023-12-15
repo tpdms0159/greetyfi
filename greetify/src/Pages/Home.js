@@ -50,15 +50,15 @@ export default function Home() {
             <SwiperSlide ><img src = 'assets/card/MAX/BIRTHDAY1.png' alt='ALT'style={{width: '100%', borderRadius: '16px'}}/></SwiperSlide>
             <SwiperSlide ><img src = 'assets/card/MAX/NEW_YEAR1.png' alt='ALT' style={{width: '100%', borderRadius: '16px'}}/></SwiperSlide>
             <SwiperSlide ><img src = 'assets/card/MAX/CHRISTMAS1.png' alt='ALT'style={{width: '100%', borderRadius: '16px'}}/></SwiperSlide>
-            <SwiperSlide ><img src = 'assets/card/MAX/END_YEAR1.png' alt='ALT'style={{width: '100%', borderRadius: '16px'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'assets/card/MAX/YEAR_END1.png' alt='ALT'style={{width: '100%', borderRadius: '16px'}}/></SwiperSlide>
          </Swiper>
 
          </div>
     
 
-        <Btn text="나만의 카드 만들기" link='/main/season' length="90%" style={{
+        <Btn text="나만의 카드 만들기" link='/main/season' length="100%" style={{
           margin: "0 5%",
-        }} />
+        }} size='1' />
         
         <p style={{
           display: 'flex',

@@ -8,21 +8,7 @@ function Input(props) {
 
     let words = [];
 
-    const Btn = styled.button`
-      width: 100%;
-      height: 6vh;
-      border-color: #FF67A4;
-      border-radius: 10px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2%;
-      background-color: #131212;
-      font-size: 20px;
-
-      margin:5vh 3vw;
-    `
+   
   const sendWords = () => {
     words = [...words, world1, world2];
     props.getwords(words);
@@ -32,41 +18,37 @@ function Input(props) {
   sendWords();
   return (
     <div>
-        <div style={{width: '80vw',margin: '3vw'}}>
-        <p>1번째 단어</p>
+        <div style={{width: '80vw'}}>
+        <p style={{color: '#FF408D'}}>1번째 단어</p>
       <input type='text' onChange={(e) => {
         setWord1(e.target.value);
       }} 
       style={{
-        width: '80vw',
-        height: '5vh',
+        width: '90%',
         borderRadius: '16px',
-        padding: '1vh 2vw',
+        padding: '4%',
         fontSize: '5vw'
         }}/>
       
 
 </div>
-<div style={{width: '80vw',margin: '3vw', }}>
-      <p>2번쨰 단어</p>
+<div style={{width: '80vw' }}>
+      <p style={{color: '#FF408D'}}>2번쨰 단어</p>
       <input type='text' onChange={(e) => setWord2(e.target.value)}
       style={{
-        width: '80vw',
-        height: '5vh',
+        width: '90%',
+        
         borderRadius: '16px',
-        padding: '1vh 2vw',
+        padding: '4%',
         fontSize: '5vw'
         
         }}/>
-      <p> 
+      <p style={{paddingLeft: '5%'}}> 
         난해한 단어라도 Greetify가 멋진 내용으로
         <br/> 
         재 탄생 시켜드릴께요
     </p>
     </div>
-
-
-   
 
 
     </div>
