@@ -41,13 +41,16 @@ function Word() {
   const checks = useSelector((state) => {return state.select.value});
   let len1 = 0;
   let len2 = 0;
-  console.log('words checks:', checks);
 
+  console.log('words checks:', checks);
 
   const getWords = (word) =>{
     words.current = word;
+    console.log(words);
     len1 = words.current[0].length;
     len2 = words.current[1].length;
+    console.log(len1, len2);
+    
   } 
 
   return (
@@ -63,15 +66,20 @@ function Word() {
       </div>
 
       <div style={{display: 'flex', flexDirection: 'row', width: '90%'}}>
+{/*       
+          {setLen1(words.current[0].length)}
+          {setLen2(words.current[1].length)} */}
+        
 
       <Btn text="이전" link='/main/age' func={() => {
         console.log('이전');
         dispatch(word([]));
         console.log("onclick")}} length="42%" size='2'/>
+        
 
-        <Btn text="다음" link={len1 !== 0 && len2 !== 0 ? '/main/speech': "" } func = {() => {
-          console.log(len1, len2)
-          if (len1 !== 0 && len2 !== 0)  {
+        <Btn text="다음" link={words.current[0] !== "" && words.current[1] !== "" ? '/main/speech': "" } func = {() => {
+          
+          if ( len1 !== 0 && len2 !== 0)  {
             dispatch(word(words));
             console.log('success');
           }

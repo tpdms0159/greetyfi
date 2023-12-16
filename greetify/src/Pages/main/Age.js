@@ -88,7 +88,7 @@ export default function Age() {
             return (
               <>
               { (ind % 3) === 2 ? 
-                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'flex-start'}}>
+                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                 {word.map(data => {
                   const select = isSelected.includes(data.eng);
                   
@@ -96,7 +96,7 @@ export default function Age() {
                   return(
                   <div style={{textAlign: 'center'}}> 
                     <Option onClick = {() => {onClick(data.eng)}} > 
-                      <div>&nbsp</div>
+                      <div>&nbsp;</div>
                       <img src={`/assets/age/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
                       { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
             
@@ -120,7 +120,7 @@ export default function Age() {
                 return(
                   <div style={{textAlign: 'center'}}> 
                     <Option onClick = {() => {onClick(data.eng)}} > 
-                    <div>&nbsp</div>
+                    <div>&nbsp;</div>
                       <img src={`/assets/age/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
                       { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
             

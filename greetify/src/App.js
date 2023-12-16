@@ -46,9 +46,9 @@ function App() {
       <Route path='/main/season' element={<Season/>} />
       <Route path='/main/design' element={<CardDesign/>} />
       <Route path='/main/emotion' element={<Emotion/>} />
-      <Route path='/main/Age' element={<Age/>} />
-      <Route path='/main/Word' element={<Word/>} />
-      <Route path='/main/Speech' element={<Speech/>} />
+      <Route path='/main/age' element={<Age/>} />
+      <Route path='/main/word' element={<Word/>} />
+      <Route path='/main/speech' element={<Speech/>} />
 
       <Route path='/loading' element={<Loading/>} />
       <Route path='/checkcard' element={<CheckCard/>} />

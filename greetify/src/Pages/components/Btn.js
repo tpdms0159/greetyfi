@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export default function Btn(props) {
-    console.log(props.link);
+    
     
   return (
     <div style={{
@@ -13,7 +13,7 @@ export default function Btn(props) {
         flex : 1,
         justifyContent: 'center',
         alignContent: 'center',
-    }} onClick={props.onClick !== null ? props.func: () => {}}>
+    }} onClick={props.func !== null ? props.func: () => {}}>
         
         <Link to={`${props.link}`}>
             <p style={{

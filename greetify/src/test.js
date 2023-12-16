@@ -6,7 +6,7 @@ const { Kakao } = window;
 
 export default (props) =>{
 	// 배포한 자신의 사이트
-    const realUrl = "https://localhost:3000"
+    const realUrl = "https://greetyfi-tpdms0159s-projects.vercel.app/"
     // 로컬 주소 (localhost 3000 같은거)
     // const resultUrl = window.location.href;
     const [href, setHref] = useState("");
@@ -34,17 +34,17 @@ export default (props) =>{
         Kakao.Share.sendDefault({
             objectType: 'feed',
             content: {
-                title: '신년우체부',
-                description: '나만의 인사카드를 만들어봐요',
+                title: '마음 우체국',
+                description: '나만의 마음카드를 만들어봐요',
                 imageUrl:
-                "/assets/kakaoBanner.png",
+                "https://github.com/tpdms0159/greetyfi/blob/main/greetify/public/assets/kakaoBanner.png?raw=true",
                 link: {
                     mobileWebUrl: realUrl,
                 },
             },
             buttons: [
                 {
-                    title: '나도 테스트 하러가기',
+                    title: '나도 카드 만들러가기',
                     link: {
                     mobileWebUrl: realUrl,
                     },

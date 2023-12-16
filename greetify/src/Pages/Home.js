@@ -29,6 +29,18 @@ const CardStyle = styled.img`
   width: 100%;
   borderRadius: 16px;
 `
+
+const handleCopyClipBoard = async (text) => {
+  try {
+      await navigator.clipboard.writeText(text);
+      console.log(text);
+      
+  } catch (err) {
+      console.log(err);
+  }
+};
+
+
 export default function Home() {
   return (
     <BoardingView>
@@ -56,7 +68,7 @@ export default function Home() {
          </div>
     
 
-        <Btn text="나만의 카드 만들기" link='/main/season' length="100%" style={{
+        <Btn text="나만의 카드 만들기" link='/main/season' length="90%" style={{
           margin: "0 5%",
         }} size='1' />
         
@@ -66,6 +78,7 @@ export default function Home() {
           marginTop: '20%'
         }}
         onClick={() => {
+          handleCopyClipBoard("https://greetyfi-tpdms0159s-projects.vercel.app")
           Swal.fire({
             title: 'URL 복사 완료',
             html: `
@@ -78,7 +91,8 @@ export default function Home() {
 
 
           }
-          )}   
+          );
+        }   
     }>
       그립하이 친구에게 공유하기  &nbsp;&nbsp;
             <img src='assets/icons/icon_link intact.png' alt ='alt' />
