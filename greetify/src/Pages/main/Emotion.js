@@ -88,6 +88,7 @@ console.log('emotion checks:', checks);
                 <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                 {word.map(data => {
                   const select = isSelected.includes(data.eng);
+                  console.log(select);
 
                   return(
                   <div style={{textAlign: 'center'}}> 
@@ -96,11 +97,11 @@ console.log('emotion checks:', checks);
                       
                       { select ? 
                       <>
-                      <img src={`/public/assets/emotion/active/icon_${data.word}_V.svg`} style={{ position: 'absolute', zIndex: 2}} />
+                      <img src={`/assets/emotion/active/icon_${data.word}_V.svg`} style={{ position: 'absolute', zIndex: 2}} />
                       <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/>
                        </>
                       :
-                      <img src={`/assets/emotion/noactive/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
+                      <img src={`/assets/emotion/noActive/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
                       }
                        
             
