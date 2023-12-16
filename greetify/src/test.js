@@ -37,7 +37,7 @@ export default (props) =>{
                 title: '신년우체부',
                 description: '나만의 인사카드를 만들어봐요',
                 imageUrl:
-                "",
+                "/assets/kakaoBanner.png",
                 link: {
                     mobileWebUrl: realUrl,
                 },

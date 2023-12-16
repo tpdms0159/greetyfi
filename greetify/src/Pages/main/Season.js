@@ -99,7 +99,7 @@ export default function Home() {
                   return(
                   <div style={{textAlign: 'center'}}> 
                     <Option onClick = {() => {onClick(data.eng)}} > 
-                      <div>hjello</div>
+                    <div>&nbsp;</div>
                       <img src={`/assets/season/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
                       { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
             
@@ -122,7 +122,7 @@ export default function Home() {
                 return(
                   <div style={{textAlign: 'center'}}> 
                     <Option onClick = {() => {onClick(data.eng)}} > 
-                      <div>hjello</div>
+                    <div>&nbsp;</div>
                       <img src={`/assets/season/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
                       { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
             

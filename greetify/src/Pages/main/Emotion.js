@@ -96,7 +96,7 @@ console.log('emotion checks:', checks);
                       
                       { select ? 
                       <>
-                      <img src={`/assets/emotion/active/icon_${data.word}_V.svg`} style={{ position: 'absolute', zIndex: 2}} />
+                      <img src={`/public/assets/emotion/active/icon_${data.word}_V.svg`} style={{ position: 'absolute', zIndex: 2}} />
                       <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/>
                        </>
                       :

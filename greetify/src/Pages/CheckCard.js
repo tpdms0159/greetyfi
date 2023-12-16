@@ -124,7 +124,7 @@ const [href, setHref] = useState("");
             width: '387px',
             height: '640px',
             padding: '5vw'
-            }}>
+        }}>
               
                 <h1 style={{
                     position: 'absolute',
@@ -146,7 +146,7 @@ const [href, setHref] = useState("");
                 </p>
             
             <img src={`/assets/card/DEFAULT/${datas.value.season}${datas.value.cardDesignId}.png`} style={{
-                width: '90%',
+                width : '387px',
                 borderRadius: '16px',
                 
                 margin: '2vh 3vw 2vh 0vw',
