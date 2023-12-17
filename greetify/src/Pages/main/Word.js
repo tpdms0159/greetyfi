@@ -57,12 +57,13 @@ function Word() {
   return (
     <BoardingView>
 
-      <Stepbar len="70%"/>
+      <Stepbar len="278px"/>
 
       <Title 
       title1="섞고 싶은 2개의 단어를"
       title2="적어주세요"/>
-      <div style={{minHeight: '55vh'}}>
+
+      <div style={{minHeight: '50vh'}}>
       <Input getwords={getWords}/>
       </div>
 

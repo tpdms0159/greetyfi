@@ -85,7 +85,7 @@ export default function Loading() {
 
   return (
     <BoardingView>
-        <Stepbar len="80%"/>
+        <Stepbar len="370px"/>
         <h1 style={{
           fontFamily: 'Yclover',
           marginTop: '10vh'

@@ -17,30 +17,31 @@ function Input(props) {
 
   sendWords();
   return (
-    <div>
-        <div style={{width: '80vw'}}>
-        <p style={{color: '#FF408D'}}>1번째 단어</p>
-      <input type='text' onChange={(e) => {
-        setWord1(e.target.value);
-      }} 
-      style={{
-        width: '90%',
-        borderRadius: '16px',
-        padding: '4%',
-        fontSize: '5vw'
-        }}/>
-      
+    <div style={{width: '368px'}}>
 
-</div>
-<div style={{width: '80vw' }}>
+        <div  >
+          <p style={{color: '#FF408D'}}>1번째 단어</p>
+          <input type='text' onChange={(e) => {
+            setWord1(e.target.value);
+            }} 
+            style={{
+              width: '100%',
+              height: '10%',
+              borderRadius: '16px',
+              padding: '4%',
+              fontSize: '18px'
+              }}/>
+        </div>
+
+<div >
       <p style={{color: '#FF408D'}}>2번쨰 단어</p>
       <input type='text' onChange={(e) => setWord2(e.target.value)}
       style={{
-        width: '90%',
-        
-        borderRadius: '16px',
-        padding: '4%',
-        fontSize: '5vw'
+            width: '100%',
+            height: '10%',
+            borderRadius: '16px',
+            padding: '4%',
+            fontSize: '18px'
         
         }}/>
       <p style={{paddingLeft: '5%'}}> 

@@ -109,6 +109,7 @@ const [href, setHref] = useState("");
       flexDirection:'column',
       justifyContent: 'center',
       alignItems:'center',
+      width: '430px'
       
     }}>
       <h1 style={{color: 'white', fontFamily: 'Yclover'}}>마음 우체국</h1>

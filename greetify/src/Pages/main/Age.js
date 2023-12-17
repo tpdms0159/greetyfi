@@ -29,7 +29,7 @@ const Option = styled.div`
 
   justify-content: center;
   align-items: center;
-  margin: 10vw;
+  margin: 30%;
 
 `
 export default function Age() {
@@ -73,7 +73,7 @@ export default function Age() {
   return (
     <BoardingView>
 
-      <Stepbar len='60%'/>
+      <Stepbar len='222px'/>
       
       
       <Title
@@ -82,7 +82,7 @@ export default function Age() {
       />
 
 
-      <div style={{width: '90%', minHeight: '50vh', padding: '3vh 3vw', textAlign: 'start'}}>
+      <div style={{width: '90%', minHeight: '50vh', marginTop: '10%'}}>
             {datas.map((data, ind) => {
               word = [...word, data];
             return (
@@ -94,14 +94,14 @@ export default function Age() {
                   
 
                   return(
-                  <div style={{textAlign: 'center'}}> 
+                  <div style={{textAlign: 'center', width: '115px'}}> 
                     <Option onClick = {() => {onClick(data.eng)}} > 
                       <div>&nbsp;</div>
                       <img src={`/assets/age/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
                       { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
             
                     </Option>
-                    <p style={{padding: '3vh'}}>{data.word}</p>
+                    <p style={{marginTop: '50%'}}>{data.word}</p>
                     </div>        
                   );
                 })}
@@ -118,14 +118,14 @@ export default function Age() {
                 console.log('isSelected:', data.isSelected);
 
                 return(
-                  <div style={{textAlign: 'center'}}> 
+                  <div style={{textAlign: 'center', width: '115px'}}> 
                     <Option onClick = {() => {onClick(data.eng)}} > 
                     <div>&nbsp;</div>
                       <img src={`/assets/age/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
                       { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
             
                     </Option>
-                    <p style={{padding: '3vh'}}>{data.word}</p>
+                    <p style={{marginTop: '50%'}}>{data.word}</p>
                     </div>  
                 );
               })}

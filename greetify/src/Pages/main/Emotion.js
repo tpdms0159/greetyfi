@@ -129,7 +129,7 @@ console.log('emotion checks:', checks);
                       <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/>
                        </>
                       :
-                      <img src={`/assets/emotion/noactive/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
+                      <img src={`/assets/emotion/noActive/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
                       }
                        
             

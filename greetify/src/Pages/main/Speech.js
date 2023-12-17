@@ -28,7 +28,7 @@ const Option = styled.div`
 
   justify-content: center;
   align-items: center;
-  margin: 10vw;
+  margin: 30%;
 
 `
 
@@ -63,7 +63,7 @@ export default function Speech() {
   return (
     <BoardingView>
 
-      <Stepbar len='80%'/>
+      <Stepbar len='370px'/>
       
       
      <Title
@@ -72,26 +72,26 @@ export default function Speech() {
      sub1="원하시는 말투 1가지를 정해주세요"
     />
 
-      <div style={{minWidth: '90%', minHeight: '50vh', padding: '3vh 3vw', textAlign: 'start'}}>
+      <div style={{width: '90%', minHeight: '50vh', marginTop:'10%'}}>
             {datas.map((data, ind) => {
               word = [...word, data];
             return (
               <>
               { (ind % 3) === 2 ? 
-                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'flex-start',  minWidth : '100%'}}>
+                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between',  minWidth : '100%'}}>
                 {word.map(data => {
                   const select = isSelected === data.eng;
                   
 
                   return(
-                  <div style={{textAlign: 'center', width: '33%'}}> 
+                  <div style={{textAlign: 'center', width: '115px'}}> 
                     <Option onClick = {() => {onClick(data.eng)}} > 
                       <div>&nbsp;</div>
                       <img src={`/assets/speech/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
                       { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
             
                     </Option>
-                    <p style={{padding: '3vh', fontSize: '15px'}}>{data.word}</p>
+                    <p style={{marginTop:'50%'}}>{data.word}</p>
                     </div>        
                   );
                 })}
@@ -113,7 +113,7 @@ export default function Speech() {
                       { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
             
                     </Option>
-                    <p style={{padding: '3vh'}}>{data.word}</p>
+                    <p style={{marginTop:'50%'}}>{data.word}</p>
                     </div>  
                 );
               })}
