@@ -37,12 +37,14 @@ export default function Loading() {
 
   const dispatch = useDispatch();
 
+  
+
 
   // { withCredentials: true }
   useEffect(() => {
 
         // 이 인스턴스를 사용하여 요청 보내기
-        axios.post("http://223.130.134.101/api/cards/create-phrase",
+        axios.post("https://api.greetify.xyz/api/cards/create-phrase",
         formattedData, {
           withCredentials: true,
         }
