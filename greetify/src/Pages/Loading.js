@@ -55,7 +55,7 @@ export default function Loading() {
           },0);
         })
         .catch ((error) => {
-          return console.log(error);
+          return console.log("error: ",error);
         });
 })
 
