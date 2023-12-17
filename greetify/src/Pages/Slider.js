@@ -9,13 +9,13 @@ import 'swiper/css/pagination';
 import './styles.css';
 
 function Slider(props) {
-  const ind = useRef(0);
+  const [ind, setInd] = useState(0);
+
   const sendInd = (e) => {
     props.getindex(e.activeIndex)
-    ind.current = e.activeIndex;
-    
+    setInd(e.activeIndex);
   }
-  console.log(props.imgURL1);
+
   
   
   return (
@@ -27,8 +27,10 @@ function Slider(props) {
  style={{marginBottom: '10%', }}
 >
     
-    <SwiperSlide><img src={`${props.imgURL1}`}  style={{width: '100%', borderRadius: '20px', border: ind.current == 0 ? "solid 3px #FF408D" : ""}}/></SwiperSlide>
-    <SwiperSlide><img  src={`${props.imgURL2}`}style={{width: '100%', borderRadius: '20px', border: ind.current == 1 ? "solid 3px #FF408D" : ""}}/></SwiperSlide>
+    <SwiperSlide>
+  
+      <img src={`${props.imgURL1}`}  style={{width: '100%', borderRadius: '20px'}}/></SwiperSlide>
+    <SwiperSlide><img  src={`${props.imgURL2}`}style={{width: '100%', borderRadius: '20px'}}/></SwiperSlide>
    
     </Swiper>
   )
