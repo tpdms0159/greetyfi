@@ -69,10 +69,10 @@ export default function Home() {
           style={{width: '100%', height: '60vh'}}
    
          >
-            <SwiperSlide ><img src = 'assets/card/MAX/BIRTHDAY1.png' alt='ALT'style={{width: '100%', borderRadius: '16px', border: 'solid 3px #2F2C2C'}}/></SwiperSlide>
-            <SwiperSlide ><img src = 'assets/card/MAX/NEW_YEAR1.png' alt='ALT' style={{width: '100%', borderRadius: '16px', border: 'solid 3px #2F2C2C'}}/></SwiperSlide>
-            <SwiperSlide ><img src = 'assets/card/MAX/CHRISTMAS1.png' alt='ALT'style={{width: '100%', borderRadius: '16px', border: 'solid 3px #2F2C2C'}}/></SwiperSlide>
-            <SwiperSlide ><img src = 'assets/card/MAX/YEAR_END1.png' alt='ALT'style={{width: '100%', borderRadius: '16px', border: 'solid 3px #2F2C2C'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'https://github.com/tpdms0159/greetyfi/blob/main/greetify/public/assets/card/SAMPLE/BIRTHDAY1.png?raw=true' alt='ALT'style={{width: '100%', borderRadius: '16px', border: 'solid 3px #2F2C2C'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'https://github.com/tpdms0159/greetyfi/blob/main/greetify/public/assets/card/SAMPLE/CHRISTMAS1.png?raw=true' alt='ALT' style={{width: '100%', borderRadius: '16px', border: 'solid 3px #2F2C2C'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'https://github.com/tpdms0159/greetyfi/blob/main/greetify/public/assets/card/SAMPLE/END_YEAR1.png?raw=true' alt='ALT'style={{width: '100%', borderRadius: '16px', border: 'solid 3px #2F2C2C'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'https://github.com/tpdms0159/greetyfi/blob/main/greetify/public/assets/card/SAMPLE/NEW_YEAR2.png?raw=true' alt='ALT'style={{width: '100%', borderRadius: '16px', border: 'solid 3px #2F2C2C'}}/></SwiperSlide>
          </Swiper>
 
          </div>
