@@ -37,7 +37,7 @@ export default function CheckCard() {
   const CardPosition = styled.h1`
   position: absolute;
   z-index: 2;
-  top: 14.38%;
+  top: 10.8%;
   left: 9%;
   font-size: 12px;
   color: 'white';
@@ -117,7 +117,6 @@ const [href, setHref] = useState("");
       <div id='downloadImg' style={{
             width: '387px',
             height: '640px',
-            padding: '5vw'
         }}>
               
                 <CardPosition 
@@ -136,18 +135,18 @@ const [href, setHref] = useState("");
                     top: '60%',
                     color:'white',
                     textAlign: 'center',
-                    fontFamily: 'pretendMedium',
+                    fontFamily: 'Yclover',
                 }}> {datas.ments}
                 </p>
             
-            <img src={`/assets/card/DEFAULT/${datas.value.season}${datas.value.cardDesignId}.png`} style={{
+            <img src={`/assets/card/DEFAULT/${season}${num}.png`} style={{
                 width : '387px',
                 borderRadius: '16px',
                 border: 'solid 3px #2F2C2C',
-                
-                margin: '2vh 3vw 2vh 0vw',
+                border:  'solid 5px #FF408D',
                 position: 'absolute',
                 zIndex: 1,
+
             }}/>
         </div>
 
@@ -158,15 +157,18 @@ const [href, setHref] = useState("");
         flexDirection: 'row', 
         justifyContent: 'center',
         alignItems: 'center',
-        width: '80%'}} id='card'>
+        width: '80%',
+        margin: '5% 0'
+        }} id='card'>
 
         <Link to="/main/word">
-          <div style={{display: 'flex', flexDirection: 'row'}}>
+          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
             <img src="assets/icons/icon_T.png" style={{
-              width: '6vw',
-              height: '3vh',
+              width: '20%',
+              height: '10%',
               margin: '2vw',
               color: 'white',
+              
               
             }}/>
             <p style={{
