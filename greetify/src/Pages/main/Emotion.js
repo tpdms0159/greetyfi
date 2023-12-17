@@ -88,7 +88,7 @@ console.log('emotion checks:', checks);
                 <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                 {word.map(data => {
                   const select = isSelected.includes(data.eng);
-                  console.log(select);
+                  
 
                   return(
                   <div style={{textAlign: 'center'}}> 
@@ -154,7 +154,8 @@ console.log('emotion checks:', checks);
         console.log('이전');
         dispatch(emotion([]));
         
-        console.log("onclick")}} length="42%" size='2'/>
+        console.log("onclick")
+        }} length="42%" size='2'/>
 
         <Btn text="다음" link={isSelected.length === 0 ? "": '/main/age'} func={() => {
           console.log(isSelected.length);

@@ -7,7 +7,7 @@ const initialStateValue = {
     emotional: [],
     age: [],
     dialect: 'None',
-    word: []
+    words: []
 };
 
 const dataBox = createSlice({
@@ -28,19 +28,22 @@ const dataBox = createSlice({
             state.value.age = action.payload;
         },
         word: (state, action) => {
-            state.value.word = action.payload.current;
+            state.value.words = action.payload.current;
         },
         dialect: (state, action) => {
             state.value.dialect = action.payload;
         },
         ments: (state, action) => {
             state.ments = action.payload;
+        },
+        initial: (state) => {
+            state.value = initialStateValue;
         }
 
 
     }
 });
 
-export const {season, cardDesign, emotion, age, word, dialect, ments} = dataBox.actions;
+export const {season, cardDesign, emotion, age, word, dialect, ments, initial} = dataBox.actions;
 
 export default dataBox;

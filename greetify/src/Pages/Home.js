@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Btn from './components/Btn';
@@ -13,6 +13,8 @@ import { EffectCards, Pagination } from 'swiper/modules';
 
 import Swal from 'sweetalert2';
 import Title from './components/Title';
+import { useDispatch } from 'react-redux';
+import { initial } from '../reducer';
 
 
 const BoardingView = styled.div`
@@ -41,7 +43,15 @@ const handleCopyClipBoard = async (text) => {
 };
 
 
+
+
 export default function Home() {
+  const dispatch = useDispatch();
+  useEffect(()=> {
+    dispatch(initial());
+  })
+
+
   return (
     <BoardingView>
         <h1 style={{fontFamily: 'Yclover', marginTop: '10%'}}>그립하이</h1>
@@ -59,10 +69,10 @@ export default function Home() {
           style={{width: '100%', height: '60vh'}}
    
          >
-            <SwiperSlide ><img src = 'assets/card/MAX/BIRTHDAY1.png' alt='ALT'style={{width: '100%', borderRadius: '16px'}}/></SwiperSlide>
-            <SwiperSlide ><img src = 'assets/card/MAX/NEW_YEAR1.png' alt='ALT' style={{width: '100%', borderRadius: '16px'}}/></SwiperSlide>
-            <SwiperSlide ><img src = 'assets/card/MAX/CHRISTMAS1.png' alt='ALT'style={{width: '100%', borderRadius: '16px'}}/></SwiperSlide>
-            <SwiperSlide ><img src = 'assets/card/MAX/YEAR_END1.png' alt='ALT'style={{width: '100%', borderRadius: '16px'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'assets/card/MAX/BIRTHDAY1.png' alt='ALT'style={{width: '100%', borderRadius: '16px', border: 'solid 3px #2F2C2C'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'assets/card/MAX/NEW_YEAR1.png' alt='ALT' style={{width: '100%', borderRadius: '16px', border: 'solid 3px #2F2C2C'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'assets/card/MAX/CHRISTMAS1.png' alt='ALT'style={{width: '100%', borderRadius: '16px', border: 'solid 3px #2F2C2C'}}/></SwiperSlide>
+            <SwiperSlide ><img src = 'assets/card/MAX/YEAR_END1.png' alt='ALT'style={{width: '100%', borderRadius: '16px', border: 'solid 3px #2F2C2C'}}/></SwiperSlide>
          </Swiper>
 
          </div>

@@ -5,8 +5,9 @@ import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
 import KakaoShare from '../test';
 import html2canvas from 'html2canvas';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import DownImage from '../test';
+import { initial } from '../reducer';
 
 const {Kakao} = window;
 
@@ -32,32 +33,19 @@ export default function CheckCard() {
   background-color: #131212;
   font-size: 20px;
 `
+
+  const CardPosition = styled.h1`
+  position: absolute;
+  z-index: 2;
+  top: 14.38%;
+  left: 9%;
+  font-size: 12px;
+  color: 'white';
+  
+  `
 const [href, setHref] = useState("");
 
   const onDownloadBtn = async()=>{
-    // domtoimage
-    // .toBlob(document.querySelector("#downloadImg"))
-    // .then((blob)=>{
-    //     const saveConfirm = window.confirm("이미지를 저장하시겠습니까?")
-    //     if(saveConfirm === true){
-    //     saveAs(blob, 'download.png');
-    //     }
-    // })
-    // .catch((error) => {
-    //   console.log(error);
-    // })
-
-
-    // window.scrollTo(0, 0);
-
-    // let url = "";
-    // await html2canvas(document.getElementById("downloadImg")).then(async (canvas) => {
-    //     url = await canvas.toDataURL("image/jpg").split(',')[1];
-    //     setOpen(true);
-    // });
-
-    // await uploadImgur(url);
-
 
     const link = document.createElement('a');
     const target = document.getElementById('downloadImg');
@@ -83,14 +71,18 @@ const [href, setHref] = useState("");
     const today = new Date();
     const [myDate, setMydate] = useState("");
     const datas = useSelector((state) => {return state.select})
+    const dispatch = useDispatch();
+    // 생일 1번 빼곤 날짜, 텍스트 색깔 동일함
+    // 생일 1번 - 가운데 중앙
+    // 크리스마스 2번 - 위 중앙
+    // 나머지 아래 중앙
+    const season = datas.value.season;
+    const num = datas.value.cardDesignId;
+    console.log(season, num);
+
     console.log(datas);    
     useEffect(() =>
     {
-      
-      
-      
-      
-      
       if (parseInt(today.getDate()) < 10){
         if ( today.getMonth() + 1 < 10){
         setMydate(`${today.getFullYear()}.0${today.getMonth() + 1}.0${today.getDate()}`);
@@ -105,7 +97,8 @@ const [href, setHref] = useState("");
         else {
             setMydate(`${today.getFullYear()}.${today.getMonth() + 1}.${today.getDate()}`)
         }
-    }},[]);
+    };
+  },[]);
 
 
 
@@ -115,9 +108,10 @@ const [href, setHref] = useState("");
       display:'flex',
       flexDirection:'column',
       justifyContent: 'center',
-      alignItems:'center'
+      alignItems:'center',
+      
     }}>
-      <h1 style={{color: 'white'}}>마음 우체국</h1>
+      <h1 style={{color: 'white', fontFamily: 'Yclover'}}>마음 우체국</h1>
 
 
       <div id='downloadImg' style={{
@@ -126,14 +120,14 @@ const [href, setHref] = useState("");
             padding: '5vw'
         }}>
               
-                <h1 style={{
-                    position: 'absolute',
-                    zIndex: 2,
-                    top: '14.4%',
-                    left: '9%',
-                    fontSize: '12px',
-                    color: 'white'
-                }}>{myDate}</h1>
+                <CardPosition 
+                    // position: 'absolute',
+                    // zIndex: 2,
+                    // top: '14.38%',
+                    // left: '9%',
+                    // fontSize: '12px',
+                    // color: 'white'
+                >{myDate}</CardPosition>
                 <p style={{
                     maxWidth:'70%', 
                     position: 'absolute',
@@ -141,13 +135,15 @@ const [href, setHref] = useState("");
                     right: '12%',
                     top: '60%',
                     color:'white',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    fontFamily: 'pretendMedium',
                 }}> {datas.ments}
                 </p>
             
             <img src={`/assets/card/DEFAULT/${datas.value.season}${datas.value.cardDesignId}.png`} style={{
                 width : '387px',
                 borderRadius: '16px',
+                border: 'solid 3px #2F2C2C',
                 
                 margin: '2vh 3vw 2vh 0vw',
                 position: 'absolute',

@@ -37,7 +37,7 @@ export default function Onboarding() {
         title3="함께해요!"
         />
 
-        <Lottie animationData={motion} loop={false} style={{width: '100vw'}}/>
+        <Lottie animationData={motion} loop={false} style={{width: '100%'}}/>
         <Btn text="다음" link='/onboarding2' length='90%' size='1'/>
 
     </BoardingView>

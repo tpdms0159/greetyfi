@@ -5,8 +5,9 @@ export default function Stepbar(props) {
 const Bar = styled.div`
     displey: flex;
     width: 80%;
-    margin-top: 3vh
+    margin-top: 3vh;
 `
+console.log(props.len);
   return (
   
     <Bar>

@@ -135,7 +135,7 @@ export default function Speech() {
         
         console.log("onclick")}} length="42%" size='2'/>
 
-        <Btn text="다음" link={isSelected.length === 0 ? "": '/checkcard'} func={() => {
+        <Btn text="다음" link={isSelected.length === 0 ? "": '/loading'} func={() => {
           console.log(isSelected.length);
           if (isSelected.length !== 0) {
           dispatch(dialect(isSelected))

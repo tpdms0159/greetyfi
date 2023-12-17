@@ -39,6 +39,7 @@ function Word() {
   // }
   const words = useRef([]);
   const checks = useSelector((state) => {return state.select.value});
+  console.log()
   let len1 = 0;
   let len2 = 0;
 

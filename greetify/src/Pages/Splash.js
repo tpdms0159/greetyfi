@@ -17,7 +17,7 @@ export default function Splash() {
     window.location.href = "/onboarding"
   },3000);
   return (
-    <Lottie animationData={motion} loop={false} style={{width: '100vw'}}/>
+    <Lottie animationData={motion} loop={false} style={{width: '100%'}}/>
     
 
   )

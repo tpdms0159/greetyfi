@@ -91,7 +91,7 @@ export default function Home() {
             return (
               <>
               { (ind % 3) === 2 ? 
-                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'flex-start'}}>
+                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                 {word.map(data => {
                   const select = isSelected === data.eng;
                   

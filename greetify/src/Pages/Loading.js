@@ -11,7 +11,7 @@ import { ments } from '../reducer';
 export default function Loading() {
 
   const BoardingView = styled.div`
-  width: 50%;
+  width: 100%;
   color: white;
   display: flex;
   flex-direction: column;
@@ -23,13 +23,16 @@ export default function Loading() {
       return state.select.value;
   });
 
+
+  console.log("loading: ", selects);
+
   const formattedData = {
     cardDesignId: selects.cardDesignId,
     season: selects.season,
     emotional: selects.emotional,
     age: selects.age,
     dialect: selects.dialect,
-    words: selects.word.current,
+    words: selects.words,
   }
 
   const dispatch = useDispatch();
@@ -37,7 +40,6 @@ export default function Loading() {
 
   // { withCredentials: true }
   useEffect(() => {
-    console.log(selects);
 
         // 이 인스턴스를 사용하여 요청 보내기
         axios.post("http://223.130.134.101/api/cards/create-phrase",
@@ -82,7 +84,11 @@ export default function Loading() {
   return (
     <BoardingView>
         <Stepbar len="80%"/>
-        <Lottie animationData={motion} loop={false} style={{width: '100%'}}/>
+        <h1 style={{
+          fontFamily: 'Yclover',
+          marginTop: '10vh'
+        }}>카드 제작중...</h1>
+        <Lottie animationData={motion} loop={false} style={{width: '100%',  textAlign: 'center' }}/>
 
     </BoardingView>
     
