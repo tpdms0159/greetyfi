@@ -64,9 +64,11 @@ const getInd = (ind) => {
         sub2="글귀가 배치되어 받아 보실 수 있으세요"
         />
 
-      <Slider getindex={getInd} style={{heigth: '50vh', margin: '10% 0', border:  "solid 30px #FF408D"}} 
+
+      <Slider getindex={getInd} style={{heigth: '50vh', margin: '10% 0'}} 
       imgURL1={`/assets/card/MAX/${checks}1.png`} imgURL2={`/assets/card/MAX/${checks}2.png`}
       />
+    
 
       <div style={{display: 'flex', flexDirection: 'row', width: '90%', }}>
         <Btn text="이전" link='/main/season' 
