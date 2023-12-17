@@ -26,7 +26,7 @@ const BackImg = styled.div`
 export default function Onboarding() {
   return (
     <BoardingView>
-        <StepBar len= "60%"/>
+        <StepBar len= "247px"/>
         
         <Title 
         title1="뭐라고 내용을 작성해야될지" 
@@ -35,7 +35,7 @@ export default function Onboarding() {
         sub2="재치있는 내용으로 알아서 작성해줘요"
         />
 
-        <Lottie animationData={motion} loop={true} style={{minWidth: '100vw'}}/>
+        <Lottie animationData={motion} loop={true} style={{minWidth: '100%'}}/>
 
         <Btn text="다음" link='/onboarding3' length='90%' size='1'/>
     </BoardingView>

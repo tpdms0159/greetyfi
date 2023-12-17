@@ -82,7 +82,7 @@ export default function Age() {
       />
 
 
-      <div style={{minWidth: '90%', minHeight: '50vh', padding: '3vh 3vw', textAlign: 'start'}}>
+      <div style={{width: '90%', minHeight: '50vh', padding: '3vh 3vw', textAlign: 'start'}}>
             {datas.map((data, ind) => {
               word = [...word, data];
             return (
@@ -139,7 +139,7 @@ export default function Age() {
             })}
         </div>
 
-        <div style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
+        <div style={{display: 'flex', flexDirection: 'row', width: '90%'}}>
 
 
 

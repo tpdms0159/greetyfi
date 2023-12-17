@@ -17,15 +17,13 @@ export default function Btn(props) {
         
         <Link to={`${props.link}`}>
             <p style={{
-                width: '100%',
                 position: 'absolute',
                 zIndex: 2,
-                width: `${props.length}`,
+                width: props.size == 1 ? '370px': '175px',
                 textAlign:'center',
                 textDecoration: 'none',
                 color : 'white',
                 fontSize: '24px',
-                // verticalAlign: 'center',
             }}>{props.text}</p>
 
         <img src={`/assets/btnBox${props.size}.png`} style={{

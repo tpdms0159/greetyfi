@@ -14,7 +14,7 @@ console.log(props.len);
     <img src='/assets/stepBar/emptyBar.png' style={{
       position: 'absolute', 
       zIndex: 2,
-      width: '80vw',
+      width: '370px',
       height: '1vh'}}/>
 
       <img src='/assets/stepBar/pinkBar.png' style={{

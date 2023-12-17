@@ -29,7 +29,7 @@ export default function Onboarding() {
  
   return (
     <BoardingView>
-        <StepBar len="30%"/>
+        <StepBar len="60px"/>
 
         <Title 
         title1="인사 돌리기 힘들다구요?"

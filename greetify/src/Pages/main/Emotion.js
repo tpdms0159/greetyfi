@@ -27,7 +27,7 @@ const Option = styled.div`
 
   justify-content: center;
   align-items: center;
-  margin: 10vw;
+  margin: 30%;
 
 `
 export default function Home() {
@@ -71,7 +71,7 @@ console.log('emotion checks:', checks);
   return (
     <BoardingView>
 
-      <Stepbar len='45%'/>
+      <Stepbar len='111px'/>
 
       <Title
       title1="녹이고 싶은 감성을"
@@ -79,21 +79,21 @@ console.log('emotion checks:', checks);
       sub1="녹이고 싶은 감성을 1~2가지 선택해주세요"
       />
 
-      <div style={{minWidth: '90%', minHeight: '50vh', padding: '3vh 3vw', textAlign: 'start'}}>
+      <div style={{width: '90%', minHeight: '50vh', marginTop: '10%'}}>
             {datas.map((data, ind) => {
               word = [...word, data];
             return (
               <>
               { (ind % 3) === 2 ? 
-                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between',  marginBottom: '10%'}}>
                 {word.map(data => {
                   const select = isSelected.includes(data.eng);
                   
 
                   return(
-                  <div style={{textAlign: 'center'}}> 
+                  <div style={{textAlign: 'center', width: '115px'}}> 
                     <Option onClick = {() => {onClick(data.eng)}} > 
-                      <div>&nbsp;</div>
+                
                       
                       { select ? 
                       <>
@@ -106,7 +106,7 @@ console.log('emotion checks:', checks);
                        
             
                     </Option>
-                    <p style={{padding: '3vh'}}>{data.word}</p>
+                    <p style={{marginTop: '50%'}}>{data.word}</p>
                     </div>        
                   );
                 })}
@@ -119,9 +119,9 @@ console.log('emotion checks:', checks);
               {word.map(data => {
                 const select = isSelected.includes(data.eng);
                 return(
-                  <div style={{textAlign: 'center'}}> 
+                  <div style={{textAlign: 'center', width: '115px', }}> 
                     <Option onClick = {() => {onClick(data.eng)}} > 
-                      <div>&nbsp;</div>
+            
 
                       { select ? 
                       <>
@@ -134,7 +134,7 @@ console.log('emotion checks:', checks);
                        
             
                     </Option>
-                    <p style={{padding: '3vh'}}>{data.word}</p>
+                    <p style={{marginTop: '50%'}}>{data.word}</p>
                     </div>  
                 );
               })}
@@ -149,7 +149,7 @@ console.log('emotion checks:', checks);
         </div>
 
 
-      <div style={{display: 'flex', flexDirection: 'row', width: '90%'}}>
+      <div style={{display: 'flex', flexDirection: 'row', width: '90%', marginTop: '10%'}}>
       <Btn text="이전" link='/main/design' func={() => {
         console.log('이전');
         dispatch(emotion([]));

@@ -27,12 +27,13 @@ const BoardingView = styled.div`
 `
 
 const Option = styled.div`
+  width: 100px;
+
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
-  margin: 10vw;
+  margin-bottom: 3%;
 
 `
 export default function Home() {
@@ -74,7 +75,7 @@ export default function Home() {
   return (
     <BoardingView>
 
-      <Stepbar len='10%'/>
+      <Stepbar len='55px'/>
       
       
       
@@ -85,13 +86,13 @@ export default function Home() {
 
 
 
-      <div style={{minWidth: '90%', minHeight: '30vh', padding: '3vh 3vw', textAlign: 'start'}}>
+      <div style={{width: '90%', minHeight: '50vh', marginTop: '10%'}}>
             {datas.map((data, ind) => {
               word = [...word, data];
             return (
               <>
               { (ind % 3) === 2 ? 
-                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginBottom: '10%'}}>
                 {word.map(data => {
                   const select = isSelected === data.eng;
                   
@@ -99,12 +100,12 @@ export default function Home() {
                   return(
                   <div style={{textAlign: 'center'}}> 
                     <Option onClick = {() => {onClick(data.eng)}} > 
-                    <div>&nbsp;</div>
+             
                       <img src={`/assets/season/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
                       { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
             
                     </Option>
-                    <p style={{padding: '3vh'}}>{data.word}</p>
+                    <p style={{marginTop: '70%'}}>{data.word}</p>
                     </div>        
                   );
                 })}

@@ -55,7 +55,7 @@ const getInd = (ind) => {
   return (
     <BoardingView>
 
-      <Stepbar len="30%"/>
+      <Stepbar len="111px"/>
 
   
         <Title

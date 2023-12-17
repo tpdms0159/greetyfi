@@ -24,7 +24,7 @@ const BoardingView = styled.div`
 export default function Onboarding() {
   return (
     <BoardingView>
-        <Stepbar len="80%"/>
+        <Stepbar len="370px"/>
 
         <Title
         title1="이방 저방 왔다갔다"
@@ -33,7 +33,7 @@ export default function Onboarding() {
         sub2=" 일괄적으로 인사 카드를 보내드립니다!"
         />
         
-        <Lottie animationData={motion} loop={false} style={{width: '100vw'}}/>
+        <Lottie animationData={motion} loop={false} style={{width: '100%'}}/>
         <Btn text="다음" link="/home" length="90%" size='1'/>
 
     </BoardingView>

@@ -56,7 +56,7 @@ export default function Home() {
     <BoardingView>
         <h1 style={{fontFamily: 'Yclover', marginTop: '10%'}}>그립하이</h1>
 
-        <div style={{textAlign: 'center', width: '70vw', height: '65vh', margin: '-10% 0 10% -20vw'}}>
+        <div style={{textAlign: 'center', width: '70%', height: '65vh', margin: '10% 0 10% -15%'}}>
         
         <Swiper
          effect={'cards'}
