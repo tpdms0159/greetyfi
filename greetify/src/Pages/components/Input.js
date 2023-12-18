@@ -25,7 +25,7 @@ function Input(props) {
             setWord1(e.target.value);
             }} 
             style={{
-              width: '100%',
+              width: '90%',
               height: '10%',
               borderRadius: '16px',
               padding: '4%',
@@ -37,7 +37,7 @@ function Input(props) {
       <p style={{color: '#FF408D'}}>2번쨰 단어</p>
       <input type='text' onChange={(e) => setWord2(e.target.value)}
       style={{
-            width: '100%',
+            width: '90%',
             height: '10%',
             borderRadius: '16px',
             padding: '4%',

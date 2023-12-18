@@ -23,12 +23,13 @@ const BoardingView = styled.div`
 `
 
 const Option = styled.div`
-  display: flex;
-  flex-direction: column;
+width: 100px;
 
-  justify-content: center;
-  align-items: center;
-  margin: 30%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-bottom: 3%;
 
 `
 
@@ -78,20 +79,20 @@ export default function Speech() {
             return (
               <>
               { (ind % 3) === 2 ? 
-                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between',  minWidth : '100%'}}>
+                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between',  marginBottom: '10%'}}>
                 {word.map(data => {
                   const select = isSelected === data.eng;
                   
 
                   return(
-                  <div style={{textAlign: 'center', width: '115px'}}> 
+                  <div style={{textAlign: 'center'}}> 
                     <Option onClick = {() => {onClick(data.eng)}} > 
                       <div>&nbsp;</div>
                       <img src={`/assets/speech/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
                       { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
             
                     </Option>
-                    <p style={{marginTop:'50%'}}>{data.word}</p>
+                    <p style={{marginTop:'70%'}}>{data.word}</p>
                     </div>        
                   );
                 })}
@@ -113,7 +114,7 @@ export default function Speech() {
                       { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
             
                     </Option>
-                    <p style={{marginTop:'50%'}}>{data.word}</p>
+                    <p style={{marginTop:'70%'}}>{data.word}</p>
                     </div>  
                 );
               })}

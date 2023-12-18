@@ -128,7 +128,7 @@ export default function Home() {
                       { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
             
                     </Option>
-                    <p style={{padding: '3vh'}}>{data.word}</p>
+                    <p style={{padding: '70%'}}>{data.word}</p>
                     </div>  
                 );
               })}
@@ -153,7 +153,7 @@ export default function Home() {
                     html: `
                     옵션을 선택해주세요 !!`,
                     imageUrl: '/assets/alert/fail.png',
-                    width: '80%',
+                    width: '330px',
                   })}
                 }} size='1'/>
 
