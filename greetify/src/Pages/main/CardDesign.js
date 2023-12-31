@@ -7,7 +7,7 @@ import Slider from '../Slider';
 import Stepbar from '../components/StepBar';
 import Title from '../components/Title';
 import { useDispatch, useSelector } from 'react-redux';
-import { cardDesign } from '../../reducer';
+import { cardDesign, season } from '../../reducer';
 import Btn from '../components/Btn';
 
 
@@ -23,21 +23,7 @@ export default function CardDesign() {
   align-items: center;
   maring-bottom: 10%;
 `
-// const Btn = styled.button`
-//   width: 100%;
-//   height: 6vh;
-//   border-color: #FF67A4;
-//   border-radius: 10px;
 
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 2%;
-//   background-color: #131212;
-//   font-size: 20px;
-
-//   margin:5vh 3vw;
-// `
 const dispatch = useDispatch();
 const checks = useSelector((state) => {
   return state.select.value.season;
@@ -70,23 +56,12 @@ const getInd = (ind) => {
       />
     
 
-      <div style={{display: 'flex', flexDirection: 'row', width: '90%', }}>
+      <div style={{display: 'flex', flexDirection: 'row', width: '100%', }}>
         <Btn text="이전" link='/main/season' 
-        func={() => {console.log("onclick")}} length="42%" size='2'/>
+        func={() => {dispatch(season('none')); alert('시즌 선택 정보가 삭제됩니다 !!')}} length="42%" size='2'/>
         <Btn text="다음" link='/main/emotion' 
         func={() => {console.log('index:', index); dispatch(cardDesign(index + 1));}} length="42%" size='2'/>
         
-      {/* <Btn onClick={() => {console.log(index)}}>
-        <Link to='/main/season' style={{width: '100%', textDecoration: 'none', color: 'white'}}>이전</Link>
-      </Btn>
-
-      <Btn onClick={() => {
-       
-          
-        
-      }}>
-        <Link to='/main/emotion' style={{width: '100%', textDecoration: 'none', color: 'white'}}>다음</Link>
-      </Btn> */}
       </div>
 
       </BoardingView>

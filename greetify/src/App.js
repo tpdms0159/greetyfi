@@ -57,7 +57,7 @@ function App() {
       <Route path='/test' element={<KakaoShare/>} />
 
       <Route path='/testimg' element={<Dom/>} />
-      {/* <Route path='/testdownload' element={<ExampleCaptureOnMountManually/>} /> */}
+      
 
 
      

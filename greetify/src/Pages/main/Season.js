@@ -9,37 +9,15 @@ import { cardDesign } from '../../reducer';
 import axios from 'axios'
 import Btn from '../components/Btn'
 import Swal from 'sweetalert2'
+import Option, { BoardingView, OptionBox, OptionRow } from '../components/DivStyles'
 
-
-
-
-const BoardingView = styled.div`
-  
-  width: 100%;
-  max-width: 100%;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  maring-bottom: 10%;
-`
-
-const Option = styled.div`
-  width: 100px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 3%;
-
-`
 export default function Home() {
 
   const [isSelected, setIsSelected] = useState("");
   const [datas, setDatas] = useState([]);
+  const dispatch = useDispatch(); 
+  const checks = useSelector((state) => {return state.select.value});
+  console.log('seoson checks:', checks)
 
   var word = [];
 
@@ -56,13 +34,11 @@ export default function Home() {
   }, []);
 
 
-  const dispatch = useDispatch(); 
-  const checks = useSelector((state) => {return state.select.value});
-  console.log('seoson checks:', checks)
-
+  
   
   const onClick = (eng) => {
     console.log('eng:', eng);
+    
     if (eng == undefined){
       alert("메뉴를 선택해주세요!");
     }
@@ -70,69 +46,73 @@ export default function Home() {
     console.log('eng:', eng);
     setIsSelected(eng);
     }
-    // 변경된 값을 전송하도록 해야한다 - reducer
+    
   }
   return (
     <BoardingView>
 
       <Stepbar len='55px'/>
-      
-      
-      
+    
       <Title
        title1="시즌을 선택해주세요"
        sub1="카드가 쓰일 시즌을 1가지 선택해주세요"
        />
 
+      <OptionBox style={{width: '90%', minHeight: '50vh'}}>
+        {datas.map((data, ind) => {
+          word = [...word, data];
+          return (
+            <>
+            { (ind % 3) === 2 ? 
+            <OptionRow key={ind}>
+              {word.map(data => {
+                const select = isSelected === data.eng;
+                return(
+                  <Option key={data.id} onClick = {() => {onClick(data.eng)}} > 
+                    <img src={`/assets/season/icon_${data.word}.png`} style={{
+                      position:'absolute',
+                      zIndex: 1
+                    }}/>
 
-
-      <div style={{width: '90%', minHeight: '50vh', marginTop: '10%'}}>
-            {datas.map((data, ind) => {
-              word = [...word, data];
-            return (
-              <>
-              { (ind % 3) === 2 ? 
-                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginBottom: '10%'}}>
-                {word.map(data => {
-                  const select = isSelected === data.eng;
-                  
-
-                  return(
-                  <div style={{textAlign: 'center'}}> 
-                    <Option onClick = {() => {onClick(data.eng)}} > 
-             
-                      <img src={`/assets/season/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
-                      { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
-            
-                    </Option>
-                    <p style={{marginTop: '70%'}}>{data.word}</p>
-                    </div>        
+                    {select ? 
+                      <img src='/assets/iconBox.png' style={{
+                        position: 'absolute',
+                        zIndex: 2
+                      }}/>:
+                      null
+                      }
+                    <p style={{marginTop: '150%'}}>{data.word}</p>
+                  </Option>      
                   );
                 })}
                 {word = []}
-                </div> :
+                </OptionRow> :
                 <>
                 
-                { ind === datas.length-1 ? 
-              <div style={{ display: 'flex', justifyContent:'flex-start'}}>
+              { ind === datas.length-1 ? 
+              <OptionRow>
               {word.map(data => {
-                
-                
                 const select = isSelected === data.eng;
 
                 return(
-                  <div style={{textAlign: 'center'}}> 
-                    <Option onClick = {() => {onClick(data.eng)}} > 
-                    <div>&nbsp;</div>
-                      <img src={`/assets/season/icon_${data.word}.png`} style={{ position: 'absolute', zIndex: 2}}/>
-                      { select ? <img src='/assets/iconBox.png' style={{ position: 'absolute',zIndex: 1}}/> : null}
-            
-                    </Option>
-                    <p style={{padding: '70%'}}>{data.word}</p>
-                    </div>  
+                  <Option key={data.id} onClick = {() => {onClick(data.eng)}} > 
+                    <img src={`/assets/season/icon_${data.word}.png`} style={{
+                      position:'absolute',
+                      zIndex: 1
+                    }}/>
+
+                    {select ? 
+                      <img src='/assets/iconBox.png' style={{
+                        position: 'absolute',
+                        zIndex: 2
+                      }}/>:
+                      null
+                      }
+                    <p style={{marginTop: '150%'}}>{data.word}</p>
+                  </Option> 
                 );
               })}
-              </div>
+              </OptionRow>
               :
               null}
 
@@ -140,9 +120,13 @@ export default function Home() {
               }
               </>);
             })}
-        </div>
+        </OptionBox>
         
-        <Btn text="다음" link={isSelected.length == 0 ? "": '/main/design'} length="90%" func={() => {
+        <Btn 
+          text="다음" 
+          link={isSelected.length == 0 ? "": '/main/design'} 
+          length="90%" 
+          func={() => {
                 console.log('onClick');
                 if (isSelected !== ""){
                   dispatch(season(isSelected));

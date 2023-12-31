@@ -46,6 +46,12 @@
 }
 
 @font-face {
+  font-family: YcloverRegular;
+  src: url('/public/assets/fonts/YClover-Regular.otf');
+}
+
+@font-face {
   font-family: pretendMedium;
   src: url('/public/assets/fonts/Pretendard-Medium.otf');
 }
+

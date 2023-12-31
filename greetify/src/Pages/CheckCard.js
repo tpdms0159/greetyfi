@@ -7,43 +7,36 @@ import KakaoShare from '../test';
 import html2canvas from 'html2canvas';
 import { useDispatch, useSelector } from 'react-redux';
 import DownImage from '../test';
-import { initial } from '../reducer';
+import { initial, ments } from '../reducer';
+import { BoardingView, DatePositon, FinalCard, ImgTextBox, MentPosition, MentPositionBottom, MiniMenu, MiniText } from './components/DivStyles';
+import Btn from './components/Btn';
 
 const {Kakao} = window;
 
 
 export default function CheckCard() {
-  const realUrl = "localhost:3000"
-  const imgURL = "https://github.com/tpdms0159/greetyfi/blob/main/greetify/public/assets/card/%EC%83%9D%EC%9D%BC%EC%B9%B4%EB%93%9C_1%20copy.png?raw=true";
+  const realUrl = "localhost:3000";
+  const [href, setHref] = useState("");
+  const today = new Date();
+  const [myDate, setMydate] = useState("");
+  const datas = useSelector((state) => {return state.select})
+  const dispatch = useDispatch();
+
+  const season = datas.value.season;
+  const num = datas.value.cardDesignId;
+
+  const [top, setTop] = useState(false);
+  const [middle, setMiddle] = useState(false);
+  const [blackFont, setBlackfont] = useState(false);
+
+  
+
+
 
   const setCORSHeaders = (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
   };
   
-
-  const Btn = styled.button`
-  width: 90%;
-  border-color: #FF67A4;
-  border-radius: 10px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2%;
-  background-color: #131212;
-  font-size: 20px;
-`
-
-  const CardPosition = styled.h1`
-  position: absolute;
-  z-index: 2;
-  top: 10.8%;
-  left: 9%;
-  font-size: 12px;
-  color: 'white';
-  
-  `
-const [href, setHref] = useState("");
 
   const onDownloadBtn = async()=>{
 
@@ -68,19 +61,8 @@ const [href, setHref] = useState("");
     });
 
   }
-    const today = new Date();
-    const [myDate, setMydate] = useState("");
-    const datas = useSelector((state) => {return state.select})
-    const dispatch = useDispatch();
-    // 생일 1번 빼곤 날짜, 텍스트 색깔 동일함
-    // 생일 1번 - 가운데 중앙
-    // 크리스마스 2번 - 위 중앙
-    // 나머지 아래 중앙
-    const season = datas.value.season;
-    const num = datas.value.cardDesignId;
-    console.log(season, num);
 
-    console.log(datas);    
+
     useEffect(() =>
     {
       if (parseInt(today.getDate()) < 10){
@@ -97,122 +79,61 @@ const [href, setHref] = useState("");
         else {
             setMydate(`${today.getFullYear()}.${today.getMonth() + 1}.${today.getDate()}`)
         }
+
+      // ment position 정하기
+    if (num == '1' && season == 'BIRTHDAY'){ setMiddle(true);}
+    else if (num == '2' && season == 'CHRISMAS'){ setTop(true);}
+
+    // font color 정하기
+    if (num == '1' && season !== 'BIRTHDAY') {setBlackfont(true);}
     };
   },[]);
 
-
+  const imgURL = 'url(assets/card/DEFAULT/' + season + num + '.png)';
 
   return (
-    <div style={{
-      color: 'white',
-      display:'flex',
-      flexDirection:'column',
-      justifyContent: 'center',
-      alignItems:'center',
-      width: '430px'
-      
-    }}>
-      <h1 style={{color: 'white', fontFamily: 'Yclover'}}>마음 우체국</h1>
 
+    <BoardingView>
+    <h1 style={{color: 'white', fontFamily: 'Yclover'}}>마음 우체국</h1>
 
-      <div id='downloadImg' style={{
-            width: '387px',
-            height: '640px',
-        }}>
-              
-                <CardPosition 
-                    // position: 'absolute',
-                    // zIndex: 2,
-                    // top: '14.38%',
-                    // left: '9%',
-                    // fontSize: '12px',
-                    // color: 'white'
-                >{myDate}</CardPosition>
-                <p style={{
-                    maxWidth:'70%', 
-                    position: 'absolute',
-                    zIndex: 2,
-                    right: '12%',
-                    top: '60%',
-                    color:'white',
-                    textAlign: 'center',
-                    fontFamily: 'Yclover',
-                }}> {datas.ments}
-                </p>
-            
-            <img src={`/assets/card/DEFAULT/${season}${num}.png`} style={{
-                width : '387px',
-                borderRadius: '16px',
-                border: 'solid 3px #2F2C2C',
-                border:  'solid 5px #FF408D',
-                position: 'absolute',
-                zIndex: 1,
+    <FinalCard id='downloadImg' style={{
+      backgroundImage:  imgURL, 
+      color: blackFont ? 'black' : 'white' 
+      }}>
 
-            }}/>
-        </div>
+      <DatePositon>{myDate}</DatePositon>
+      <MentPosition style={{
+        margin: top ? '10% 0 0 10%' : null,
+        margin: middle ? '50% 0 0 10%':null,
+      }}> {datas.ments}</MentPosition>
 
-      
-  
-      <div style={
-        {display: 'flex', 
-        flexDirection: 'row', 
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '80%',
-        margin: '5% 0'
-        }} id='card'>
+    </FinalCard>
 
-        <Link to="/main/word">
-          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-            <img src="assets/icons/icon_T.png" style={{
-              width: '20%',
-              height: '10%',
-              margin: '2vw',
-              color: 'white',
-              
-              
-            }}/>
-            <p style={{
-              textDecoration: 'none', 
-              color: 'white'}}>문구 바꾸기</p>
-          </div>
-          </Link>
+      <MiniMenu>
+ 
+        <Link to="/main/word" style={{textDecoration: 'none', width: '30%'}}
+        onClick={() => {dispatch(ments([]))}}>
+          <ImgTextBox>
+            <img src="assets/icons/icon_T.png" style={{marginRight: '5%'}}/>
+            <p >문구 바꾸기</p>
+          </ImgTextBox>
+        </Link> 
         
 
-        <div style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems:'center',
-          margin: '0 10%'
-        }} 
-        onClick={() =>{
-          
-          console.log('click');
-         
-            // return (<DownImage/> );
-        }
-          }>
-          <img src="assets/icons/icon_kakao.png" style={{
-            width: '6vw',
-            height: '3vh',
-            margin: '2vw'
-          }}/>
-          {/* <p >서비스 공유</p> */}
-          <KakaoShare link={href === "" ? "/assets/card/생일카드_1.png": href} style={{
-            
-          }}/>
-        </div>
-      </div>
+        <ImgTextBox style={{width: '40%'}}>
+          <img src="assets/icons/icon_kakao.png" style={{marginRight: '5%'}}/>
+          <KakaoShare link={href === "" ? "/assets/card/생일카드_1.png": href}/>
+        </ImgTextBox>
 
+      </MiniMenu>
       
+      <Btn 
+          text="이미지 저장하기" 
+          link='/checkcard'
+          length="90%" 
+          func={onDownloadBtn}
+          />
 
-
-
-      <Btn onClick={onDownloadBtn}>
-            <Link  style={{width: '100%', textDecoration: 'none', color: 'white'}}>이미지 저장하기</Link>
-      </Btn>
-
-    </div>
+    </BoardingView>
   )
 }

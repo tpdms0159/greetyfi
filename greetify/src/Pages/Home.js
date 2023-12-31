@@ -15,18 +15,10 @@ import Swal from 'sweetalert2';
 import Title from './components/Title';
 import { useDispatch } from 'react-redux';
 import { initial } from '../reducer';
+import { BoardingView } from './components/DivStyles';
 
 
-const BoardingView = styled.div`
-  width: 100%;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  maring-bottom: 10%;
-`
+
 const CardStyle = styled.img`
   width: 100%;
   borderRadius: 16px;
@@ -41,8 +33,6 @@ const handleCopyClipBoard = async (text) => {
       console.log(err);
   }
 };
-
-
 
 
 export default function Home() {
@@ -96,15 +86,12 @@ export default function Home() {
             <br>
             친구에게 <p style="display: inline; color: #FF408D;">GREETIFY</p>를 소개해주세요!`,
             imageUrl: 'assets/alert/sucess.png',
-            
-            width: '80%',
-
-
+            width: '330px',
           }
           );
         }   
     }>
-      그립하이 친구에게 공유하기  &nbsp;&nbsp;
+      그립하이 친구에게 공유하기  &nbsp;
             <img src='assets/icons/icon_link intact.png' alt ='alt' />
         </p>
     </BoardingView>

@@ -37,7 +37,7 @@ function Slider(props) {
  style={{marginBottom: '10%', }}
 >
     
-    <SwiperSlide ><img src={`${props.imgURL1}`}  style={{width: '100%', borderRadius: '20px', border: select1 ? 'solid 5px #FF408D': ""}} /></SwiperSlide>
+    <SwiperSlide ><img src={`${props.imgURL1}`}  style={{width: '100%', borderRadius: '20px', border: select1 ? 'solid 3px #FF408D': ""}} /></SwiperSlide>
     <SwiperSlide onCLick={()=> {setSelect2(true)}}><img  src={`${props.imgURL2}`}style={{width: '100%', borderRadius: '20px', border: select2 ? 'solid 5px #FF408D': ""}}/></SwiperSlide>
    
     </Swiper>

@@ -7,24 +7,8 @@ import styled from 'styled-components'
 import StepBar from './components/StepBar'
 import Title from './components/Title'
 import Btn from './components/Btn'
+import { BoardingView } from './components/DivStyles'
 
-
-
-const BoardingView = styled.div`
-  width: 100%;
-  height: 100%;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  maring-bottom: 10%;
-`
-
-const BackImg = styled.div`
-  background-image = url('assets/stepBar/emptyBar.png');
-`
 export default function Onboarding() {
  
   return (

@@ -4,35 +4,52 @@ import styled from 'styled-components'
 
 export default function Btn(props) {
     
-    
+    const Div = styled.div`
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+
+        width: 90%;
+        height: 70px;
+        background-image: url(/assets/btnBox1.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        margin-left: 20px;
+        text-align: center;
+    `
+
   return (
-    <div style={{
-        width: `${props.length}`,
-        display: 'flex',
-        flexDirection: 'column',
-        flex : 1,
-        justifyContent: 'center',
-        alignContent: 'center',
-    }} onClick={props.func !== null ? props.func: () => {}}>
+    <Div onClick={props.func !== null ? props.func: () => {}} style={{
+        backgroundImage: props.size == '2'? 'url(/assets/btnBox2.png)': null,
+    }}>
         
-        <Link to={`${props.link}`}>
+        <Link to={`${props.link}`} style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+
+            width: '100%',
+            height: '80%',
+            textDecoration: 'none',
+        }}>
             <p style={{
-                position: 'absolute',
-                zIndex: 2,
-                width: props.size == 1 ? '370px': '175px',
-                textAlign:'center',
-                textDecoration: 'none',
-                color : 'white',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+
+                width: '100%',
+                textAlign: 'center',
+
+                color: 'white',
+                marginRight: '5%',
+                paddingBottom: props.size == '2' ? '8%': '2%',
                 fontSize: '24px',
+
             }}>{props.text}</p>
 
-        <img src={`/assets/btnBox${props.size}.png`} style={{
-            position: 'absolute',
-            zIndex: 1,
-        }} />
-            
         
         </Link>
-    </div>
+    </Div>
 
 )}
