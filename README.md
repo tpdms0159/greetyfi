@@ -18,6 +18,6 @@ https://www.figma.com/file/LRD7lT0H2VqO2T2lCDjdfr/greetify?type=design&node-id=5
 
 ## 💌 서비스 링크
 https://greetyfi-tpdms0159s-projects.vercel.app
-* 현재 서버 중단으로 인해 최종 결과는 사전에 설정해놓은 멘트만 나옵니다.
+* 현재 서버 중단으로 인해 최종 결과에서 메세지는 나오지 않고 있습니다.
 
    
