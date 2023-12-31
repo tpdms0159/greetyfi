@@ -104,7 +104,7 @@ export default function CheckCard() {
       <DatePositon>{myDate}</DatePositon>
       <MentPosition style={{
         margin: top ? '10% 0 0 10%' : null,
-        margin: middle ? '50% 0 0 10%':null,
+        margin: middle ? '70% 0 0 10%':null,
       }}> {datas.ments}</MentPosition>
 
     </FinalCard>
