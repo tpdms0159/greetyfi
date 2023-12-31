@@ -7,6 +7,9 @@
 ## 💌 와이어 프레임 및 디자인
 https://www.figma.com/file/LRD7lT0H2VqO2T2lCDjdfr/greetify?type=design&node-id=57-5572&mode=design
 
+![스크린샷 2023-12-31 오후 6 34 46](https://github.com/tpdms0159/greetyfi/assets/82717343/87cec5d0-1d44-4401-ad47-3fb01294c2c2)
+![스크린샷 2023-12-31 오후 6 35 30](https://github.com/tpdms0159/greetyfi/assets/82717343/0570c315-4bee-4ea2-99e9-bde2c92d40b8)
+
 ## 💌 서비스 시나리오
 1. onBoarding 화면으로 서비스 목적 확인
 2. 결과 예시 확인
@@ -15,5 +18,6 @@ https://www.figma.com/file/LRD7lT0H2VqO2T2lCDjdfr/greetify?type=design&node-id=5
 
 ## 💌 서비스 링크
 https://greetyfi-tpdms0159s-projects.vercel.app
+* 현재 서버 중단으로 인해 최종 결과는 사전에 설정해놓은 멘트만 나옵니다.
 
    
